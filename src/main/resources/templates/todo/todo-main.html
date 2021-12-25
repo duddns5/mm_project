@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>MENTOR & MENTEE</title>
+
+<th:block th:replace="fragments/head :: flg_head">
+</th:block>
+<link rel="stylesheet" href="/css/todo/reset.css">
+<link rel="stylesheet" href="/css/todo/test.css">
+
+</head>
+<body class="d-flex flex-column h-100">
+    
+<th:block th:replace="fragments/nav :: flg_nav"></th:block>
+
+    
+    
+        <main class="flex-shrink-0">
+            
+      <div class="user-name">
+         <h2>회원 님<h2>
+         <h3>오늘의 할 일입니다.</h3>
+      </div>
+      
+      <div class="todo-list-wrap">
+      	<div class="todo-list">
+      		<form action="/todo/todaySave" method="post" >
+      		<!--  
+      		<c:forEach var="todo" items="${todayList}" varStatus="s tatus">
+		         <p>
+		         -->
+		         	<!-- 체크 여부 세팅 -->
+		         <!--  
+		         	<c:if test="${todo.done eq '1'}">
+			         	<input type="checkbox" id="${todo.todoIdx}" name="todoList" class="cb_todo" onclick="cb_click(this.id)" checked> 
+		         	</c:if>
+		         	<c:if test="${todo.done eq '0'}">
+			         	<input type="checkbox" id="${todo.todoIdx}" name="todoList" class="cb_todo" onclick="cb_click(this.id)"> 
+		         	</c:if>
+		         	<label for="${todo.todoIdx}" class="check-label">${todo.title}</label>
+		         </p>
+      		</c:forEach>
+      		-->
+<!--       		<div class="wrap-but"> -->
+<!--       			<input type="submit" value="저장" class="save-but" id="save"> -->
+<!--       		</div> -->
+      		</form>
+      	</div>
+      </div>
+	      
+	<div class="Aligner">
+		<div class="Aligner-item">
+		  <div class="Aligner-under-item">　</div>
+		</div>
+	</div>
+
+      <div class="percent">
+         <h3>일정 <b id="percent">0</b>% 완료!</h3>
+      </div>
+	
+	<div class="wrap-but">
+	      <a href="/todo/todo-detail"><button class="submit-but"><h5>세부 일정 관리<h5></button></a>
+	</div>
+
+
+	<!-- Footer-->
+
+<th:block th:replace="fragments/footer :: flg_footer"></th:block>
+<th:block th:replace="fragments/jsFiles :: flg_jsFiles"></th:block>
+<script src="/js/todo/todo-main.js"></script>
+</body>
+</html>
